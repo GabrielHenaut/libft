@@ -6,83 +6,65 @@
 /*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 22:29:10 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/27 03:59:40 by Ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/05/27 20:09:55 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char const *s, char c)
+static size_t	check_size(const char *s, char c)
 {
-	int	i;
-	int	in_word;
-	int	count;
+	int	size;
+	int	pos;
 
-	i = 0;
-	in_word = 0;
-	count = 0;
-	while (s[i] && i++)
+	size = 0;
+	pos = 0;
+	while (*s && *s == c)
+		s++;
+	while (s[pos])
 	{
-		if (s[i] == c && !(in_word))
-			continue ;
-		if (s[i] != c && in_word)
-			continue ;
-		if (s[i] != c && !(in_word))
-		{
-			in_word = 1;
-			count++;
-			continue ;
-		}
-		if (s[i] == c && in_word)
-			in_word = 0;
+		if (!pos)
+			size++;
+		else if (s[pos - 1] == c && s[pos] != c)
+			size++;
+		pos++;
 	}
-	return (count);
+	return (size);
 }
 
-static char	*alloc_word(const char *str, char c)
+static size_t	word_position(char const *s, char c)
 {
-	int		size;
-	char	*word;
-	int		i;
+	size_t	pos;
 
-	i = 0;
-	size = 0;
-	while (str[size] != c)
-		size++;
-	word = malloc(sizeof(char) * (size + 1));
-	if (!word)
-		return (NULL);
-	while (str[i] != c)
-	{
-		word[i] = str[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
+	pos = 0;
+	while (s[pos] && s[pos] != c)
+		pos++;
+	return (pos);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**return_str;
-	int		i;
-	int		j;
+	size_t	word_len;
+	size_t	size;
+	size_t	i;
 
-	i = 0;
-	j = 0;
-	return_str = malloc(sizeof(return_str) * (word_count(s, c) + 1));
+	if (!s)
+		return (NULL);
+	size = check_size(s, c);
+	return_str = malloc(sizeof(char *) * (size + 1));
 	if (!return_str)
 		return (NULL);
-	while (s[i])
+	i = 0;
+	while (i < size)
 	{
-		if (s[i] != c)
-		{
-			return_str[j] = alloc_word(&s[i], c);
-			j++;
-			while (s[i] != c)
-				i++;
-		}
+		while (*s && *s == c)
+			s++;
+		word_len = word_position(s, c);
+		return_str[i] = ft_substr(s, 0, word_len);
+		s += word_len + 1;
 		i++;
 	}
-	return_str[j] = NULL;
+	return_str[size] = NULL;
 	return (return_str);
 }

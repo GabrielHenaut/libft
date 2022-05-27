@@ -6,17 +6,22 @@
 /*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:49:29 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/27 03:55:11 by Ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/05/27 21:06:42 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	num_len(int n)
+static size_t	num_len(int n)
 {
-	int	size;
+	size_t	size;
 
 	size = 1;
+	if (n == -2147483648)
+	{
+		size += 2;
+		n = (n % 1000000000) * -1;
+	}
 	if (n < 0)
 	{
 		n *= -1;
@@ -33,19 +38,19 @@ static int	num_len(int n)
 char	*ft_itoa(int n)
 {
 	char	*return_str;
-	int		size;
-	int		i;
+	size_t	size;
 
 	size = num_len(n);
-	i = 0;
 	return_str = malloc(sizeof(char) * (size + 1));
 	if (!return_str)
 		return (NULL);
+	return_str[size] = '\0';
 	if (n < 0)
 	{
-		return_str[i] = '-';
-		n *= -1;
-		i++;
+		return_str[0] = '-';
+		if (n == -2147483648)
+			return_str[1] = '2';
+		n = (n % 1000000000) * -1;
 	}
 	while (n > 9)
 	{
