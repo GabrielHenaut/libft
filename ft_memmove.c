@@ -3,24 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:33:51 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/23 01:11:22 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/05/27 17:21:43 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dest, const void *src, size_t count)
+void	*ft_memmove(void *dest, const void *src, size_t count)
 {
-    size_t  i;
+	int	i;
 
-    i = 0;
-    while (i < count)
-    {
-        ((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-        i++;
-    }
-    return (dest);
+	i = 0;
+	if (!dest || !src)
+		return (NULL);
+	if (dest > src)
+	{
+		i = (int)count - 1;
+		while (i >= 0)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i--;
+		}
+	}
+	else
+	{
+		while (i < (int)count)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return (dest);
 }

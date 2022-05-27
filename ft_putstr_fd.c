@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:31:15 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/26 15:34:44 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/05/27 04:02:19 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i])
-        ft_putchar_fd(s[i++], fd);
+	i = 0;
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
 }

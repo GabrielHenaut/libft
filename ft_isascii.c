@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:09:07 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/23 21:14:29 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:51:34 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isascii(int ch)
+int	ft_isascii(int ch)
 {
-    if (ch > 127)
+	if (ch > 127 || ch < 0)
 		return (0);
 	return (1);
 }

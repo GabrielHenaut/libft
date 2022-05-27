@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:24:51 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/23 21:32:35 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:48:14 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_toupper(int ch)
+int	ft_toupper(int ch)
 {
-    if (ch >= 'a' && ch <= 'z')
-        ch -= 32;
-    return (ch);
+	if (ch >= 'a' && ch <= 'z')
+		ch -= 32;
+	return (ch);
 }

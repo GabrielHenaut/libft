@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/05/26 20:56:45 by ghenaut-         ###   ########.fr        #
+#    Updated: 2022/05/27 04:55:18 by Ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: .c.o libft.a all clean fclean re
+.PHONY: .c.o libft.a all clean fclean re bonus
 
 SRCS	= 	ft_memset.c \
 			ft_strlen.c \
@@ -51,7 +51,7 @@ BONUS	=	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
-			t_lstadd_back.c \
+			ft_lstadd_back.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
@@ -73,14 +73,14 @@ ${NAME}: ${OBJS}
 	@echo "${NAME} indexed"
 
 all: ${NAME}
-	@make clean
+	
 
 bonus:	${OBJS} ${BONUS_OBJS}
 	@ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
 	@echo "${NAME} created with bonus"
 	@ranlib ${NAME}
 	@echo "${NAME} indexed"
-	@make clean
+	
 
 clean:
 	@rm -f ${OBJS} ${BONUS_OBJS}
