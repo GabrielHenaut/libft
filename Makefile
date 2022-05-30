@@ -6,7 +6,7 @@
 #    By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/05/27 20:41:29 by Ghenaut-         ###   ########.fr        #
+#    Updated: 2022/05/30 22:21:34 by Ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,26 +69,20 @@ NAME	= libft.a
 
 ${NAME}: ${OBJS}
 	@ar rc ${NAME} ${OBJS}
-	@echo "${NAME} created"
 	@ranlib ${NAME}
-	@echo "${NAME} indexed"
 
 all: ${NAME}
 	
 
 bonus:	${OBJS} ${BONUS_OBJS}
 	@ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
-	@echo "${NAME} created with bonus"
 	@ranlib ${NAME}
-	@echo "${NAME} indexed"
 	
 
 clean:
 	@rm -f ${OBJS} ${BONUS_OBJS}
-	@echo "OBJ deleted"
 
 fclean: clean
 	@rm -f ${NAME}
-	@echo "${NAME} deleted"
 
 re: fclean all
