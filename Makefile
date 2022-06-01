@@ -6,7 +6,7 @@
 #    By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/05/30 22:21:34 by Ghenaut-         ###   ########.fr        #
+#    Updated: 2022/06/01 04:08:08 by Ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRCS	= 	ft_memset.c \
 			ft_strlen.c \
 			ft_substr.c \
 			ft_bzero.c \
-			ft_memccpy.c \
 			ft_memcpy.c \
 			ft_memmove.c \
 			ft_memchr.c \
