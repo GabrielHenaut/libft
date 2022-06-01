@@ -6,7 +6,7 @@
 #    By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/06/01 04:08:08 by Ghenaut-         ###   ########.fr        #
+#    Updated: 2022/06/01 21:04:01 by Ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,30 +58,30 @@ BONUS	=	ft_lstnew.c \
 			ft_lstmap.c \
 			
 
-OBJS	= ${SRCS:.c=.o}
-BONUS_OBJS	= ${BONUS:.c=.o}
+OBJS	= $(SRCS:.c=.o)
+BONUS_OBJS	= $(BONUS:.c=.o)
 NAME	= libft.a
 
 
 .c.o:
-	@gcc -Wall -Wextra -Werror -c $< -I . -o ${<:.c=.o}
+	@cc -Wall -Wextra -Werror -c $< -I . -o $(<:.c=.o)
 
-${NAME}: ${OBJS}
-	@ar rc ${NAME} ${OBJS}
-	@ranlib ${NAME}
+$(NAME): $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
-all: ${NAME}
+all: $(NAME)
 	
 
-bonus:	${OBJS} ${BONUS_OBJS}
-	@ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
-	@ranlib ${NAME}
+bonus:	$(OBJS) $(BONUS_OBJS)
+	@ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+	@ranlib $(NAME)
 	
 
 clean:
-	@rm -f ${OBJS} ${BONUS_OBJS}
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	@rm -f ${NAME}
+	@rm -f $(NAME)
 
 re: fclean all
