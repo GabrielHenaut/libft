@@ -6,7 +6,7 @@
 /*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 01:07:03 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/27 03:43:43 by Ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/06/02 01:47:26 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	j = dlen;
 	if (size == 0 || size <= dlen)
 		return (slen + size);
-	while (src [i] != '\0' && i < size - dlen - 1)
+	while (src[i] != '\0' && i < size - dlen - 1)
 	{
 		dest[j] = src[i];
 		i++;
