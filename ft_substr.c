@@ -6,28 +6,22 @@
 /*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 13:22:03 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/27 20:46:30 by Ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:22:39 by Ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	unsigned int	ft_size(size_t size, size_t start, size_t max_len)
+static unsigned int	ft_size(size_t size, size_t start, size_t max_len)
 {
 	unsigned int	tmp;
 
 	if (start < size)
-	{
 		tmp = size - start;
-	}
 	if (start >= size)
-	{
 		tmp = 0;
-	}
 	if (tmp > max_len)
-	{
 		tmp = max_len;
-	}
 	return (tmp);
 }
 
