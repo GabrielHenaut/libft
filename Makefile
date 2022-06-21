@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/06/01 21:04:01 by Ghenaut-         ###   ########.fr        #
+#    Updated: 2022/06/21 17:20:08 by ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS	= 	ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
 			ft_memmove.c \
+			ft_memjoin.c \
 			ft_memchr.c \
 			ft_memcmp.c \
 			ft_strlcpy.c \

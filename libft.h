@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:32:26 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/05/27 20:36:18 by Ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/06/21 17:19:56 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t count);
 void	*ft_memchr(const void *ptr, int ch, size_t count);
 int		ft_memcmp(const void *lhs, const void *rhs, size_t count);
+void	*ft_memjoin(void *s1, size_t s1_size, void *s2, size_t s2_size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strchr(const char *str, int ch);
