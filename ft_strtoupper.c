@@ -6,7 +6,7 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:01:10 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/06/23 15:05:56 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:16:00 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strtoupper(char *str)
     i = 0;
     while(str[i])
     {
-        ft_toupper(str[i]);
+        if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
         i++;
     }
     return (str);
