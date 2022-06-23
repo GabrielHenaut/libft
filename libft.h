@@ -6,7 +6,7 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:32:26 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/06/23 14:34:45 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:04:40 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_strchr(const char *str, int ch);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *str, int ch);
+char	*ft_strtoupper(char *str);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int ch);
 int		ft_isdigit(int ch);

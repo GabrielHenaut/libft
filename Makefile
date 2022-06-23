@@ -6,7 +6,7 @@
 #    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/06/23 14:34:54 by ghenaut-         ###   ########.fr        #
+#    Updated: 2022/06/23 15:04:53 by ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS	= 	ft_memset.c \
 			ft_strchr.c \
 			ft_strnstr.c \
 			ft_strncmp.c \
+			ft_strtoupper.c \
 			ft_atoi.c \
 			ft_isalpha.c \
 			ft_isdigit.c \
