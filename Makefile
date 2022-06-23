@@ -6,7 +6,7 @@
 #    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/06/23 15:04:53 by ghenaut-         ###   ########.fr        #
+#    Updated: 2022/06/23 15:30:24 by ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS	= 	ft_memset.c \
 			ft_itox.c \
 			ft_uitoa.c \
 			ft_uitoa.c \
+			ft_uitox.c \
 			ft_strmapi.c \
 			ft_striteri.c \
 			ft_putchar_fd.c \
