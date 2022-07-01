@@ -6,11 +6,11 @@
 #    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/07/01 15:50:13 by ghenaut-         ###   ########.fr        #
+#    Updated: 2022/07/01 16:19:29 by ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: .c.o libft.a all clean fclean re bonus
+.PHONY: .c.o libft.a all clean fclean re
 
 SRCS	= 	ft_memset.c \
 			ft_strlen.c \
@@ -53,8 +53,7 @@ SRCS	= 	ft_memset.c \
 			ft_putnbr_fd.c \
 			ft_strrchr.c \
 			get_next_line.c \
-			
-BONUS	=	ft_lstnew.c \
+			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -63,32 +62,43 @@ BONUS	=	ft_lstnew.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
+
+PRINTF_SRCS = ./src/ft_printf_bonus.c \
+		./src/add_char_bonus.c \
+		./src/add_str_bonus.c \
+		./src/ft_vprintf_bonus.c \
+		./src/generate_rtn_str_bonus.c \
+		./src/handle_conversions_bonus.c \
+		./src/parse_arg_bonus.c \
+		./src/utils.c \
+		./src/add_int.c \
+		./src/add_uint.c \
+		./src/add_hex.c \
+		./src/add_pointer.c \
+		./src/add_percent.c \
+		./src/handle_precision.c \
 			
 
 OBJS	= $(SRCS:.c=.o)
-BONUS_OBJS	= $(BONUS:.c=.o)
 NAME	= libft.a
 
 
+all: ${NAME}
+	@make clean
+
+${NAME}: ${OBJS}
+	@ar -rcs $@ $^
+	@make -C ft_printf/
+	@ar -rs $@ ft_printf/src/*.o
+
 .c.o:
-	@cc -Wall -Wextra -Werror -c $< -I . -o $(<:.c=.o)
-
-$(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
-
-all: $(NAME)
-	
-
-bonus:	$(OBJS) $(BONUS_OBJS)
-	@ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
-	@ranlib $(NAME)
-	
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
-	@rm -f $(OBJS) $(BONUS_OBJS)
+	@make fclean -C ft_printf
+	@rm -f *.o
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f *.a
 
 re: fclean all
