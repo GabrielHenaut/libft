@@ -6,7 +6,7 @@
 #    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/06/23 15:30:24 by ghenaut-         ###   ########.fr        #
+#    Updated: 2022/07/01 15:50:13 by ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS	= 	ft_memset.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 			ft_strrchr.c \
+			get_next_line.c \
 			
 BONUS	=	ft_lstnew.c \
 			ft_lstadd_front.c \
