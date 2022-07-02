@@ -6,7 +6,7 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:32:26 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/01 15:47:42 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:24:07 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char    *get_next_line(int fd);
+int		ft_printf(const char *fmt, ...);
 
 #endif
