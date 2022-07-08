@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_BONUS_H
-# define FT_PRINTF_BONUS_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # define STDOUT 1
 # define CONVERSIONS "csdiuxXp%"
@@ -36,21 +36,22 @@ typedef struct s_param
 	int		has_precision;
 	char	specifier;
 	int		error;
-}   t_param;
+}	t_param;
 
-typedef struct s_rtn_str{
-    int size;
-    char *str;
-}            t_rtn_str;
+typedef struct s_rtn_str
+{
+	int		size;
+	char	*str;
+}				t_rtn_str;
 
-int     ft_printf(const char *fmt, ...);
-int     ft_vprintf(const char *fmt, va_list args);
-void    generate_rtn_str(const char *fmt, va_list args, t_rtn_str *rtn);
+int		ft_printf(const char *fmt, ...);
+int		ft_vprintf(const char *fmt, va_list args);
+void	generate_rtn_str(const char *fmt, va_list args, t_rtn_str *rtn);
 void	add_char(char c, t_param *param);
 char	*char_to_str(int c);
-void    parse_arg(char *c, va_list args, t_rtn_str *rtn);
+void	parse_arg(char *c, va_list args, t_rtn_str *rtn);
 void	add_str(char *str, t_param *param);
-void    handle_conversions(char c, va_list args, t_param *param);
+void	handle_conversions(char c, va_list args, t_param *param);
 int		fill_width(t_param *param);
 void	add_int(int nbr, t_param *param);
 int		handle_zero(t_param *param);

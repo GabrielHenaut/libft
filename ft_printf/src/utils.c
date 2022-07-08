@@ -6,7 +6,7 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 21:22:41 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/01 16:17:49 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/07/07 22:51:36 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	fill_width(t_param *param)
 	param->str_len = param->width;
 	return (1);
 }
-
 
 char	*char_to_str(int c)
 {

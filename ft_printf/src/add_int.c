@@ -6,15 +6,15 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 21:27:53 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/01 16:17:49 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/07/07 22:45:02 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+
 int	handle_flags_int(t_param *param)
 {
-    char	*tmp;
+	char	*tmp;
 
 	if (param->has_precision)
 		if (fill_precision_int(param) < 0)
@@ -28,7 +28,7 @@ int	handle_flags_int(t_param *param)
 	if (param->width > param->str_len)
 		if (fill_int_width(param) < 0)
 			return (-1);
-	if((param->plus && tmp[0] != '-') || (param->space && tmp[0] != '-'))
+	if ((param->plus && tmp[0] != '-') || (param->space && tmp[0] != '-'))
 	{
 		param->str_len++;
 		free(tmp);
@@ -38,19 +38,19 @@ int	handle_flags_int(t_param *param)
 
 void	add_int(int nbr, t_param *param)
 {
-    char *tmp;
-    char *nbr_str;
+	char	*tmp;
+	char	*nbr_str;
 
 	param->specifier = 'i';
 	if (param->has_precision)
 		param->zero = 0;
-    tmp = param->str;
-    nbr_str = ft_itoa(nbr);
-    // free(param->str);
-	param->str = ft_memjoin(tmp, param->str_len, nbr_str, ft_strlen(nbr_str) + 1);
+	tmp = param->str;
+	nbr_str = ft_itoa(nbr);
+	param->str = ft_memjoin(tmp, param->str_len, \
+	nbr_str, ft_strlen(nbr_str) + 1);
 	param->str_len += ft_strlen(param->str) - 1;
-    free(tmp);
-    free(nbr_str);
+	free(tmp);
+	free(nbr_str);
 	if (handle_flags_int(param) == -1)
 		param->error = 1;
 }

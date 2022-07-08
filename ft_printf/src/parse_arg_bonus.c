@@ -6,15 +6,15 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 00:52:35 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/01 16:17:49 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/07/07 22:52:04 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    init_param(t_param *param)
+void	init_param(t_param *param)
 {
-    param->precision = 0;
+	param->precision = 0;
 	param->width = 0;
 	param->str = NULL;
 	param->str_len = 0;
@@ -80,14 +80,14 @@ static void	parse_flags(char *str, va_list args, t_param *param)
 	}
 }
 
-void    parse_arg(char *str, va_list args, t_rtn_str *rtn)
+void	parse_arg(char *str, va_list args, t_rtn_str *rtn)
 {
-    t_param param;
-	char *tmp;
+	t_param	param;
+	char	*tmp;
 
-    init_param(&param);
-    parse_flags(str, args, &param);
-    if (*str == '.' && !param.specifier)
+	init_param(&param);
+	parse_flags(str, args, &param);
+	if (*str == '.' && !param.specifier)
 	{
 		param.precision = 1;
 		ft_parse_precision(str++, args, &param);
@@ -101,10 +101,10 @@ void    parse_arg(char *str, va_list args, t_rtn_str *rtn)
 	}
 	while (!ft_strchr(CONVERSIONS, *str))
 			str++;
-    handle_conversions(*str, args, &param);
-    tmp = ft_memjoin(rtn->str, rtn->size, param.str, param.str_len);
+	handle_conversions(*str, args, &param);
+	tmp = ft_memjoin(rtn->str, rtn->size, param.str, param.str_len);
 	free(rtn->str);
 	rtn->str = tmp;
-    rtn->size += param.str_len;
-    free(param.str);
+	rtn->size += param.str_len;
+	free(param.str);
 }

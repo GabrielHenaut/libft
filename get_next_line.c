@@ -6,7 +6,7 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 20:15:31 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/01 15:56:13 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/07/07 22:41:29 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*join(char *s1, char *s2)
 	}
 	if (!s1 || !s2)
 		return (NULL);
-    str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);
 	while (s1[++i])
@@ -41,48 +41,48 @@ static char	*join(char *s1, char *s2)
 
 static char	*clear_line(char *line)
 {
-    int     i;
-    int     j;
-    char    *rtn;
+	int		i;
+	int		j;
+	char	*rtn;
 
-    i = 0;
-    j = 0;
-    while (line[i] != '\n' && line[i])
-        i++;
-    if (!line[i])
+	i = 0;
+	j = 0;
+	while (line[i] != '\n' && line[i])
+		i++;
+	if (!line[i])
 	{
 		free(line);
 		return (NULL);
 	}
 	rtn = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
-    if (!rtn)
-        return (NULL);
-    while (line[++i])
-    {
-        rtn[j] = line[i];
-        j++;
-    }
-    rtn[j] = '\0';
-    free(line);
-    return (rtn);
+	if (!rtn)
+		return (NULL);
+	while (line[++i])
+	{
+		rtn[j] = line[i];
+		j++;
+	}
+	rtn[j] = '\0';
+	free(line);
+	return (rtn);
 }
 
 static char	*get_line(char *line)
 {
 	size_t	i;
-    size_t	j;
+	size_t	j;
 	char	*rtn;
 
-    i = 0;
-    j = -1;
+	i = 0;
+	j = -1;
 	if (!line[i])
 		return (NULL);
-    while (line[i] != '\n' && line[i])
+	while (line[i] != '\n' && line[i])
 		i++;
 	rtn = (char *)malloc(sizeof(char) * (i + 2));
-    if (!rtn)
-        return (NULL);
-    while (line[++j] && line[j] != '\n')
+	if (!rtn)
+		return (NULL);
+	while (line[++j] && line[j] != '\n')
 		rtn[j] = line[j];
 	if (line[j] == '\n')
 	{
@@ -119,8 +119,8 @@ static char	*init_line(char *line_cache, int fd)
 
 char	*get_next_line(int fd)
 {
-	char	        *line;
-    static  char    *line_cache[1024];
+	char		*line;
+	static char	*line_cache[1024];
 
 	if (fd < 0 || fd > 1023)
 		return (0);
