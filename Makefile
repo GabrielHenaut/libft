@@ -6,7 +6,7 @@
 #    By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:54:52 by ghenaut-          #+#    #+#              #
-#    Updated: 2022/07/09 00:14:05 by ghenaut-         ###   ########.fr        #
+#    Updated: 2022/07/12 00:22:15 by ghenaut-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ SRCS	= 	ft_memset.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
+			ft_lstfind.c \
 			ft_sort.c
 
 PRINTF_SRCS = ./src/ft_printf_bonus.c \
@@ -85,7 +86,7 @@ NAME	= libft.a
 
 
 all: ${NAME}
-	@make clean
+# @make clean
 
 ${NAME}: ${OBJS}
 	@ar -rcs $@ $^

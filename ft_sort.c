@@ -6,7 +6,7 @@
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:32:10 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/09 00:12:40 by ghenaut-         ###   ########.fr       */
+/*   Updated: 2022/07/12 00:28:26 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	swap(int *a, int *b)
 	*b = tmp;
 }
 
-void	sort(int *target, int left, int right) 
+void	sort(int *target, int left, int right)
 {
 	int	i;
 	int	j;
@@ -39,16 +39,16 @@ void	sort(int *target, int left, int right)
 		while (pivot < target[j])
 			j--;
 		if (i >= j)
-			break;
+			break ;
 		swap(&target[i], &target[j]);
 		i++;
 		j--;
 	}
-	sort(target, left, i-1);
-	sort(target, j+1, right);
+	sort(target, left, i - 1);
+	sort(target, j + 1, right);
 }
 
-void	quicksort(int *array, size_t size)
+void	quicksort(int *array, int size)
 {
 	sort(array, 0, size - 1);
 }

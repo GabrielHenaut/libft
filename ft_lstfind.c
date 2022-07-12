@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenaut- <ghenaut-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 19:50:58 by ghenaut-          #+#    #+#             */
-/*   Updated: 2022/07/09 12:18:14 by ghenaut-         ###   ########.fr       */
+/*   Created: 2022/07/12 00:20:43 by ghenaut-          #+#    #+#             */
+/*   Updated: 2022/07/12 00:21:29 by ghenaut-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstfind(t_list *head, void *target)
 {
-	if (!new || !lst)
+	while (head)
 	{
-		ft_putstr_fd("ERROR_IN_FT_LSTADD_FRONT\n", 1);
-		return (0);
+		if (head->content == target)
+			return (head);
+		head = head->next;
 	}
-	if (!*lst)
-	{
-		*lst = new;
-		return (1);
-	}
-	new->next = *lst;
-	*lst = new;
-	return (1);
+	return (NULL);
 }
